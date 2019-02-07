@@ -1,0 +1,19 @@
+﻿<Window x:Class="Password_encryptor_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Password_encryptor_WPF"
+        mc:Ignorable="d"
+        Title="Password Encryptor WPF" Height="350" Width="400"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <StackPanel>
+        <Label Content="Password" FontWeight="Bold" Margin="10"/> 
+        <TextBox Margin="10" Text="{Binding Password, Mode=OneWayToSource}"/>
+        <Button Command="{Binding EncryptCommand}" Content="Encrypt" HorizontalAlignment="Center" Background="LightBlue" Height="30" Width="100" Margin="10"/>
+        <Label Content="Salted password" FontWeight="Bold" Margin="10"/>
+        <TextBox Margin="10" Text="{Binding SaltedPassword, Mode=OneWay}"/>
+        <Label Content="Salt" FontWeight="Bold" Margin="10"/>
+        <TextBox Text="{Binding Salt, Mode=OneWay}" Margin="10"/>
+    </StackPanel>
+</Window>
